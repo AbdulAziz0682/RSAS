@@ -5,6 +5,9 @@
  */
 package sportAcademy;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author AsadUllah
@@ -129,8 +132,10 @@ public class AdminFrame extends javax.swing.JFrame {
         jTextField26 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Add Record");
@@ -139,6 +144,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 255, 157, -1));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("DisplaylRecord");
@@ -147,6 +153,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 157, -1));
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("Search Record");
@@ -155,6 +162,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 157, -1));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("Sort And Display");
@@ -163,6 +171,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 145, 157, -1));
 
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton5.setText("Modify");
@@ -171,6 +180,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 157, -1));
 
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton6.setText("Exit");
@@ -179,73 +189,25 @@ public class AdminFrame extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 365, 157, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(jButton2)
-                .addGap(30, 30, 30)
-                .addComponent(jButton4)
-                .addGap(30, 30, 30)
-                .addComponent(jButton3)
-                .addGap(30, 30, 30)
-                .addComponent(jButton1)
-                .addGap(30, 30, 30)
-                .addComponent(jButton5)
-                .addGap(30, 30, 30)
-                .addComponent(jButton6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 631));
 
         jLayeredPane1.setLayout(new java.awt.CardLayout());
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "COACH ID", "COACH NAME", "DATE JOINED", "TERMINATED", "HOURLY RATE", "PHONE ", "ADRESS", "CENTER CODE", "SPORT CODE", "RATINGS"
-            }
-        ));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        DefaultTableModel coachTableModel = new DefaultTableModel(new Object[][] {},
+            new String[]{"CoachID", "Name", "Date Joined", "Date Terminated","Hourly Rate", "Phone", "Address", "Sport Center Code", "Sport Code", "Ratings"});
+        populateCoachTable(coachTableModel);
+        jTable3.setModel(coachTableModel);
         jScrollPane3.setViewportView(jTable3);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(299, Short.MAX_VALUE))
-        );
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 22, 928, 282));
 
         jTabbedPane1.addTab("COACH", jPanel2);
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -260,113 +222,45 @@ public class AdminFrame extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTable4);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(362, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(354, Short.MAX_VALUE))
-        );
+        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 31, 576, 218));
 
         jTabbedPane1.addTab("SPORT", jPanel3);
 
-        jButton9.setText("jButton9");
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(246, 246, 246)
-                .addComponent(jButton9)
-                .addContainerGap(629, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(jButton9)
-                .addContainerGap(482, Short.MAX_VALUE))
-        );
+        jButton9.setText("jButton9");
+        jPanel4.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 98, -1, -1));
 
         jTabbedPane1.addTab("REGISTERD STUDENTS", jPanel4);
 
         jLayeredPane1.add(jTabbedPane1, "card2");
 
+        SortAndDisplayPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         buttonGroup1.add(jRadioButton5);
         jRadioButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jRadioButton5.setText("COACHES IN ASCENDING ORDER BY NAME");
+        SortAndDisplayPanel.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 112, -1, -1));
 
         buttonGroup1.add(jRadioButton6);
         jRadioButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jRadioButton6.setText("HOURLY PAY RATE IN ASCENDING ORDER");
+        SortAndDisplayPanel.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 112, -1, -1));
 
         buttonGroup1.add(jRadioButton7);
         jRadioButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jRadioButton7.setText("COACHES BY OVERALL PERFOMANCE IN ASCENDING ORDER");
+        SortAndDisplayPanel.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 173, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("SORT AND DISPLAY");
+        SortAndDisplayPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 25, -1, -1));
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "COACH ID", "COACH NAME", "DATE JOINED", "TERMINATED", "HOURLY RATE", "PHONE ", "ADRESS", "CENTER CODE", "SPORT CODE", "RATINGS"
-            }
-        ));
+        jTable5.setAutoCreateRowSorter(true);
+        jTable5.setModel(coachTableModel);
         jScrollPane5.setViewportView(jTable5);
 
-        javax.swing.GroupLayout SortAndDisplayPanelLayout = new javax.swing.GroupLayout(SortAndDisplayPanel);
-        SortAndDisplayPanel.setLayout(SortAndDisplayPanelLayout);
-        SortAndDisplayPanelLayout.setHorizontalGroup(
-            SortAndDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SortAndDisplayPanelLayout.createSequentialGroup()
-                .addGroup(SortAndDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SortAndDisplayPanelLayout.createSequentialGroup()
-                        .addGap(285, 285, 285)
-                        .addComponent(jLabel1))
-                    .addGroup(SortAndDisplayPanelLayout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addComponent(jRadioButton7))
-                    .addGroup(SortAndDisplayPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(SortAndDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(SortAndDisplayPanelLayout.createSequentialGroup()
-                                .addComponent(jRadioButton5)
-                                .addGap(127, 127, 127)
-                                .addComponent(jRadioButton6)))))
-                .addGap(0, 15, Short.MAX_VALUE))
-        );
-        SortAndDisplayPanelLayout.setVerticalGroup(
-            SortAndDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SortAndDisplayPanelLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addGap(58, 58, 58)
-                .addGroup(SortAndDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6))
-                .addGap(36, 36, 36)
-                .addComponent(jRadioButton7)
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(120, Short.MAX_VALUE))
-        );
+        SortAndDisplayPanel.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 229, 928, 282));
 
         jLayeredPane1.add(SortAndDisplayPanel, "card3");
 
@@ -1013,20 +907,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jLayeredPane1.add(MODIFYPANEL, "card6");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 953, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLayeredPane1)
-        );
+        getContentPane().add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -1153,7 +1034,28 @@ public class AdminFrame extends javax.swing.JFrame {
             }
         });
     }
-
+    private void populateCoachTable(DefaultTableModel coachTableModel){
+        ArrayList<Coach> coachList = Coach.getAllCoaches();
+        if(coachTableModel.getRowCount()>0){
+            for(int i=0; i<coachTableModel.getRowCount(); i++){
+                coachTableModel.removeRow(i);
+            }
+        }
+        for(int i=0; i<coachList.size(); i++){
+            Object[] row = new Object[10];
+            row[0] = coachList.get(i).getId();
+            row[1] = coachList.get(i).getName();
+            row[2] = coachList.get(i).getDateJoined();
+            row[3] = coachList.get(i).getDateTerminated();
+            row[4] = coachList.get(i).getHourlyRate();
+            row[5] = coachList.get(i).getPhone();
+            row[6] = coachList.get(i).getAddress();
+            row[7] = coachList.get(i).getSportCenterCode();
+            row[8] = coachList.get(i).getSportCode();
+            row[9] = coachList.get(i).getRatings();
+            coachTableModel.addRow(row);
+}
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MODIFYPANEL;
     private javax.swing.JPanel SearchRecordPanel;
