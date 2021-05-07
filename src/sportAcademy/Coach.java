@@ -36,16 +36,14 @@ public class Coach {
     private int ratings;
     
     public Coach(){};
-    public Coach(String name, GregorianCalendar dateJoined, GregorianCalendar dateTerminated, int hourlyRate, long phone, String address, int sportCenterCode, int sportCode, int ratings) {
+    public Coach(String name, GregorianCalendar dateJoined, int hourlyRate, long phone, String address, int sportCenterCode, int sportCode) {
         this.name = name;
         this.dateJoined = dateJoined;
-        this.dateTerminated = dateTerminated;
         this.hourlyRate = hourlyRate;
         this.phone = phone;
         this.address = address;
         this.sportCenterCode = sportCenterCode;
         this.sportCode = sportCode;
-        this.ratings = ratings;
     }
     
     public static String toJson(Coach coach){
@@ -131,13 +129,11 @@ public class Coach {
         Coach c = new Coach(
                 "c1",
                 new GregorianCalendar(),
-                new GregorianCalendar(),
                 100,
                 5468987708l,
                 "address",
                 324,
-                556,
-                4
+                556
         );
         Coach c2 = new Coach();
         System.out.println(Coach.toJson(c));
