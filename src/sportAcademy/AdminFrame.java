@@ -59,15 +59,18 @@ public class AdminFrame extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
         SearchRecordPanel = new javax.swing.JPanel();
-        jTextField27 = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        coachIdRadio = new javax.swing.JRadioButton();
+        sportIdRadio = new javax.swing.JRadioButton();
+        studentIdRadio = new javax.swing.JRadioButton();
+        coachRatingsRadio = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        searchIdSpinner = new javax.swing.JSpinner();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        serachResultArea = new javax.swing.JTextArea();
+        searchButton = new javax.swing.JButton();
         addRecordPanel = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
@@ -268,37 +271,39 @@ public class AdminFrame extends javax.swing.JFrame {
 
         SearchRecordPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField27.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        SearchRecordPanel.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 146, 181, 36));
-
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel29.setText("SEARCH SPECIFIC RECORD");
         SearchRecordPanel.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 27, -1, -1));
 
-        buttonGroup2.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jRadioButton1.setText("COACH BY COACH ID ");
-        SearchRecordPanel.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 240, -1, -1));
+        buttonGroup2.add(coachIdRadio);
+        coachIdRadio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        coachIdRadio.setText("COACH BY COACH ID ");
+        SearchRecordPanel.add(coachIdRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 240, -1, -1));
 
-        buttonGroup2.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jRadioButton2.setText("SPORT BY SPORT ID");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup2.add(sportIdRadio);
+        sportIdRadio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        sportIdRadio.setText("SPORT BY SPORT ID");
+        sportIdRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                sportIdRadioActionPerformed(evt);
             }
         });
-        SearchRecordPanel.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 344, -1, -1));
+        SearchRecordPanel.add(sportIdRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 344, -1, -1));
 
-        buttonGroup2.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jRadioButton3.setText("STUDENT BY STUDENT ID");
-        SearchRecordPanel.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 396, -1, -1));
+        buttonGroup2.add(studentIdRadio);
+        studentIdRadio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        studentIdRadio.setText("STUDENT BY STUDENT ID");
+        studentIdRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentIdRadioActionPerformed(evt);
+            }
+        });
+        SearchRecordPanel.add(studentIdRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 396, -1, -1));
 
-        buttonGroup2.add(jRadioButton4);
-        jRadioButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jRadioButton4.setText("COACH BY OVERALL PERFORMANCE (RATINGS)");
-        SearchRecordPanel.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 293, -1, -1));
+        buttonGroup2.add(coachRatingsRadio);
+        coachRatingsRadio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        coachRatingsRadio.setText("COACH BY OVERALL PERFORMANCE (RATINGS)");
+        SearchRecordPanel.add(coachRatingsRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 293, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("SEARCH");
@@ -317,7 +322,24 @@ public class AdminFrame extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        SearchRecordPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 135, -1, 214));
+        SearchRecordPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 135, -1, 100));
+
+        searchIdSpinner.setModel(new javax.swing.SpinnerNumberModel());
+        SearchRecordPanel.add(searchIdSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 110, 30));
+
+        serachResultArea.setColumns(20);
+        serachResultArea.setRows(5);
+        jScrollPane2.setViewportView(serachResultArea);
+
+        SearchRecordPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 450, 280));
+
+        searchButton.setText("Search");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
+        SearchRecordPanel.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 100, 30));
 
         jLayeredPane1.add(SearchRecordPanel, "card4");
 
@@ -672,9 +694,9 @@ public class AdminFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void sportIdRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sportIdRadioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_sportIdRadioActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
@@ -697,6 +719,22 @@ public class AdminFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void studentIdRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentIdRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_studentIdRadioActionPerformed
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        // TODO add your handling code here:
+        if(coachIdRadio.isSelected()){
+            Coach foundCoach = Coach.findInDisk((int) searchIdSpinner.getValue());
+            if(foundCoach!=null){
+                this.serachResultArea.setText(Coach.toJson(foundCoach));
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Record not found...");
+            }
+    }//GEN-LAST:event_searchButtonActionPerformed
+    }
     /**
      * @param args the command line arguments
      */
@@ -768,6 +806,8 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JSpinner addSportCodeSpinner;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JRadioButton coachIdRadio;
+    private javax.swing.JRadioButton coachRatingsRadio;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -816,14 +856,11 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -853,6 +890,10 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField25;
     private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
+    private javax.swing.JButton searchButton;
+    private javax.swing.JSpinner searchIdSpinner;
+    private javax.swing.JTextArea serachResultArea;
+    private javax.swing.JRadioButton sportIdRadio;
+    private javax.swing.JRadioButton studentIdRadio;
     // End of variables declaration//GEN-END:variables
 }
