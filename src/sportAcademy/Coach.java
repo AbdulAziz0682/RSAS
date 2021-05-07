@@ -103,6 +103,16 @@ public class Coach {
         }
         return null;
     }
+    public static ArrayList<Coach> findInDiskByRatings(int ratings){
+        ArrayList<Coach> list = Coach.getAllCoaches();
+        ArrayList<Coach> result = new ArrayList<Coach>();
+        for(int i=0; i<list.size(); i++){
+            if(list.get(i).ratings==ratings){
+                result.add(list.get(i));
+            }
+        }
+        return result;
+    }
     public static boolean deleteFromDisk(int id){
         ArrayList<Coach> list = Coach.getAllCoaches();
         for(int i=0; i<list.size(); i++){

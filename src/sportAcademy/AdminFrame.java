@@ -733,8 +733,19 @@ public class AdminFrame extends javax.swing.JFrame {
             else{
                 JOptionPane.showMessageDialog(null, "Record not found...");
             }
+        }
+        else if(coachRatingsRadio.isSelected()){
+            ArrayList<Coach> foundCoachList = Coach.findInDiskByRatings((int) searchIdSpinner.getValue());
+            if(foundCoachList.size()>0){
+                for(int j=0; j<foundCoachList.size(); j++){
+                    this.serachResultArea.append(Coach.toJson(foundCoachList.get(j))+"\n");
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Records not found...");
+            }
+        }
     }//GEN-LAST:event_searchButtonActionPerformed
-    }
     /**
      * @param args the command line arguments
      */
