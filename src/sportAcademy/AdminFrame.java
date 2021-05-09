@@ -41,6 +41,7 @@ public class AdminFrame extends javax.swing.JFrame {
         sortAndDisplayButton = new javax.swing.JButton();
         modifyButton = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -53,12 +54,10 @@ public class AdminFrame extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         SortAndDisplayPanel = new javax.swing.JPanel();
-        ascendingOrderRadioButton = new javax.swing.JRadioButton();
-        hourlyRateRadioButton = new javax.swing.JRadioButton();
-        coachPerformanceRadioButton = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
         SearchRecordPanel = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         coachIdRadio = new javax.swing.JRadioButton();
@@ -132,12 +131,12 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
-        modifySportSportCodeTextField = new javax.swing.JTextField();
-        modifySportSportNameTextField = new javax.swing.JTextField();
-        modifySportSportScheduleTextField = new javax.swing.JTextField();
-        modifySportSportFeesTextField = new javax.swing.JTextField();
+        modifySportNameField = new javax.swing.JTextField();
+        modifySportScheduleField = new javax.swing.JTextField();
         modifySportButton = new javax.swing.JButton();
+        modifySportCode = new javax.swing.JSpinner();
+        modifySportFeesSpinner = new javax.swing.JSpinner();
+        jLabel33 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -199,6 +198,15 @@ public class AdminFrame extends javax.swing.JFrame {
         });
         jPanel1.add(exitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 365, 157, -1));
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setText("Refresh");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 150, 30));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 631));
 
         jLayeredPane1.setLayout(new java.awt.CardLayout());
@@ -243,21 +251,6 @@ public class AdminFrame extends javax.swing.JFrame {
 
         SortAndDisplayPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buttonGroup1.add(ascendingOrderRadioButton);
-        ascendingOrderRadioButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        ascendingOrderRadioButton.setText("COACHES IN ASCENDING ORDER BY NAME");
-        SortAndDisplayPanel.add(ascendingOrderRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 112, -1, -1));
-
-        buttonGroup1.add(hourlyRateRadioButton);
-        hourlyRateRadioButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        hourlyRateRadioButton.setText("HOURLY PAY RATE IN ASCENDING ORDER");
-        SortAndDisplayPanel.add(hourlyRateRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 112, -1, -1));
-
-        buttonGroup1.add(coachPerformanceRadioButton);
-        coachPerformanceRadioButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        coachPerformanceRadioButton.setText("COACHES BY OVERALL PERFOMANCE IN ASCENDING ORDER");
-        SortAndDisplayPanel.add(coachPerformanceRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 173, -1, -1));
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("SORT AND DISPLAY");
         SortAndDisplayPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 25, -1, -1));
@@ -266,7 +259,10 @@ public class AdminFrame extends javax.swing.JFrame {
         jTable5.setModel(coachTableModel);
         jScrollPane5.setViewportView(jTable5);
 
-        SortAndDisplayPanel.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 229, 928, 282));
+        SortAndDisplayPanel.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 928, 282));
+
+        jLabel4.setText("Click on any column Name to sort the order of display:");
+        SortAndDisplayPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 350, 30));
 
         jLayeredPane1.add(SortAndDisplayPanel, "card3");
 
@@ -314,6 +310,7 @@ public class AdminFrame extends javax.swing.JFrame {
         SearchRecordPanel.add(searchIdSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 110, 30));
 
         serachResultArea.setColumns(20);
+        serachResultArea.setFont(new java.awt.Font("Monospaced", 1, 16)); // NOI18N
         serachResultArea.setRows(5);
         jScrollPane2.setViewportView(serachResultArea);
 
@@ -553,6 +550,11 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel7.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
         modifyCoachCodeSpinner.setModel(new javax.swing.SpinnerNumberModel());
+        modifyCoachCodeSpinner.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                modifyCoachCodeSpinnerStateChanged(evt);
+            }
+        });
         jPanel7.add(modifyCoachCodeSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 170, 30));
 
         jTabbedPane3.addTab("COACH", jPanel7);
@@ -575,21 +577,11 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel28.setText("SPORT SCHEDULE");
         jPanel8.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 411, -1, -1));
 
-        jButton12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton12.setText("MODIFY");
-        jPanel8.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 528, 114, -1));
+        modifySportNameField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel8.add(modifySportNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 180, 141, 34));
 
-        modifySportSportCodeTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel8.add(modifySportSportCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 73, 141, 34));
-
-        modifySportSportNameTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel8.add(modifySportSportNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 180, 141, 34));
-
-        modifySportSportScheduleTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel8.add(modifySportSportScheduleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 394, 141, 34));
-
-        modifySportSportFeesTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel8.add(modifySportSportFeesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 287, 141, 34));
+        modifySportScheduleField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel8.add(modifySportScheduleField, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 394, 141, 34));
 
         modifySportButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         modifySportButton.setText("MODIFY");
@@ -599,6 +591,22 @@ public class AdminFrame extends javax.swing.JFrame {
             }
         });
         jPanel8.add(modifySportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 471, -1, -1));
+
+        modifySportCode.setModel(new javax.swing.SpinnerNumberModel());
+        modifySportCode.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                modifySportCodeStateChanged(evt);
+            }
+        });
+        jPanel8.add(modifySportCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 140, 30));
+
+        modifySportFeesSpinner.setModel(new javax.swing.SpinnerNumberModel());
+        jPanel8.add(modifySportFeesSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 140, 30));
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel33.setText("Modify Sport Record");
+        jPanel8.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 340, 40));
 
         jTabbedPane3.addTab("SPORT", jPanel8);
 
@@ -687,8 +695,11 @@ public class AdminFrame extends javax.swing.JFrame {
                 (int)modifySportCodeSpinner.getValue()//sportcode                
         );
         modified.setDateTerminated(modifiedDateTerminated);
-        modified.setId((int)modifyCoachCodeSpinner.getValue());
-        Coach.updateInDisk(modified);
+        modified.setId((int)modifyCoachCodeSpinner.getValue());        
+        if(Coach.updateInDisk(modified)){
+            JOptionPane.showMessageDialog(AdminFrame.this, "Record modified successfully");
+        }
+        else JOptionPane.showMessageDialog(AdminFrame.this, "Couldn't modify the record");
     }//GEN-LAST:event_coachModifyButtonActionPerformed
 
     private void sportIdRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sportIdRadioActionPerformed
@@ -697,6 +708,14 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        if(SportCenter.findInDisk((int)addSportCenterSpinner.getValue())==null){
+            JOptionPane.showMessageDialog(AdminFrame.this, "Please enter a valid sport center code, sport center record not found");
+            return;            
+        }
+        if(Sport.findInDisk((int)addSportCodeSpinner.getValue())==null){
+            JOptionPane.showMessageDialog(AdminFrame.this, "Please enter a valid sport code, sport record not found");
+            return;  
+        }
         GregorianCalendar joinedDate = (GregorianCalendar) GregorianCalendar.getInstance();
         joinedDate.setTime((Date) addDateJoinedSpinner.getValue());
         Coach newCoach = new Coach(
@@ -714,6 +733,7 @@ public class AdminFrame extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(AdminFrame.this, "Couldn't save record...");
         }
+        
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void studentIdRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentIdRadioActionPerformed
@@ -725,7 +745,7 @@ public class AdminFrame extends javax.swing.JFrame {
         if(coachIdRadio.isSelected()){
             Coach foundCoach = Coach.findInDisk((int) searchIdSpinner.getValue());
             if(foundCoach!=null){
-                this.serachResultArea.setText(Coach.toJson(foundCoach));
+                this.serachResultArea.setText(foundCoach.toPrettyString());
             }
             else{
                 JOptionPane.showMessageDialog(null, "Record not found...");
@@ -735,7 +755,7 @@ public class AdminFrame extends javax.swing.JFrame {
             ArrayList<Coach> foundCoachList = Coach.findInDiskByRatings((int) searchIdSpinner.getValue());
             if(foundCoachList.size()>0){
                 for(int j=0; j<foundCoachList.size(); j++){
-                    this.serachResultArea.append(Coach.toJson(foundCoachList.get(j))+"\n");
+                    this.serachResultArea.append(foundCoachList.get(j).toPrettyString()+"\n");
                 }
             }
             else{
@@ -745,7 +765,7 @@ public class AdminFrame extends javax.swing.JFrame {
         else if(sportIdRadio.isSelected()){
             Sport foundSport = Sport.findInDisk((int)searchIdSpinner.getValue());
             if(foundSport!=null){
-                this.serachResultArea.setText(Sport.toJson(foundSport));
+                this.serachResultArea.setText(foundSport.toPrettyString());
             }
             else{
                 JOptionPane.showMessageDialog(null, "Record not found...");             
@@ -754,7 +774,7 @@ public class AdminFrame extends javax.swing.JFrame {
         else if(studentIdRadio.isSelected()){
             Student foundStd = Student.findInDisk((int) searchIdSpinner.getValue());
             if(foundStd!=null){
-                this.serachResultArea.setText(Student.toJson(foundStd));
+                this.serachResultArea.setText(foundStd.toPrettyString());
             }
             else{
                 JOptionPane.showMessageDialog(null, "Record not found...");             
@@ -767,6 +787,20 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void modifySportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifySportButtonActionPerformed
         // TODO add your handling code here:
+        if(Sport.findInDisk((int)modifySportCode.getValue())==null){
+            JOptionPane.showMessageDialog(AdminFrame.this, "Please enter the valid sport code, sport record not found");
+            return;
+        }
+        Sport modified = new Sport(
+                (int)modifySportCode.getValue(),//code
+                modifySportNameField.getText(),//name
+                (int)modifySportFeesSpinner.getValue(),//fees
+                modifySportScheduleField.getText()//schedule
+        );
+        if(Sport.updateInDisk(modified)){
+            JOptionPane.showMessageDialog(AdminFrame.this, "Record modified successfully");
+        }
+        else JOptionPane.showMessageDialog(AdminFrame.this, "Couldn't modify the record");
     }//GEN-LAST:event_modifySportButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -788,7 +822,39 @@ public class AdminFrame extends javax.swing.JFrame {
     private void modifyAddressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyAddressFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_modifyAddressFieldActionPerformed
-    /**
+
+    private void modifySportCodeStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_modifySportCodeStateChanged
+        // TODO add your handling code here:
+        Sport found = Sport.findInDisk((int)modifySportCode.getValue());
+        if(found!=null){
+                modifySportNameField.setText(found.getName());//name
+                modifySportFeesSpinner.setValue(found.getFees());//fees
+                modifySportScheduleField.setText(found.getSchedule());//schedule
+        }
+    }//GEN-LAST:event_modifySportCodeStateChanged
+
+    private void modifyCoachCodeSpinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_modifyCoachCodeSpinnerStateChanged
+        // TODO add your handling code here:
+        Coach found = Coach.findInDisk((int)modifyCoachCodeSpinner.getValue());
+        if(found!=null){
+                modifyCoachNameField.setText(found.getName());//Name
+                modifyDateJoinedSpinner.setValue(found.getDateJoined().getTime());//date joined
+                modifyHourlyRateSpinner.setValue(found.getHourlyRate());//hourly rate
+                modifyPhoneSpinner.setValue(found.getPhone());//phone
+                modifyAddressField.setText(found.getAddress());//address
+                modifySportCenterSpinner.setValue(found.getSportCenterCode());//sportcenter
+                modifySportCodeSpinner.setValue(found.getSportCode());//sportcode
+                modifyDateTerminatedSpinner.setValue(found.getDateTerminated().getTime());
+        }
+    }//GEN-LAST:event_modifyCoachCodeSpinnerStateChanged
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        AdminFrame.this.dispose();
+        (new AdminFrame()).setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+ 
+        /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -868,8 +934,8 @@ public class AdminFrame extends javax.swing.JFrame {
             Object[] row = new Object[10];
             row[0] = coachList.get(i).getId();
             row[1] = coachList.get(i).getName();
-            row[2] = coachList.get(i).getDateJoined();
-            row[3] = coachList.get(i).getDateTerminated();
+            if(coachList.get(i).getDateJoined()!=null)row[2] = coachList.get(i).getDateJoined().getTime(); else row[2] = coachList.get(i).getDateJoined();
+            if(coachList.get(i).getDateTerminated()!=null)row[3] = coachList.get(i).getDateTerminated().getTime(); else row[3] = coachList.get(i).getDateTerminated();
             row[4] = coachList.get(i).getHourlyRate();
             row[5] = coachList.get(i).getPhone();
             row[6] = coachList.get(i).getAddress();
@@ -897,18 +963,15 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JSpinner addSportFees;
     private javax.swing.JTextField addSportName;
     private javax.swing.JTextField addSportSchedule;
-    private javax.swing.JRadioButton ascendingOrderRadioButton;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JRadioButton coachIdRadio;
     private javax.swing.JButton coachModifyButton;
-    private javax.swing.JRadioButton coachPerformanceRadioButton;
     private javax.swing.JRadioButton coachRatingsRadio;
     private javax.swing.JButton displayRecordButton;
     private javax.swing.JButton exitButton;
-    private javax.swing.JRadioButton hourlyRateRadioButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -936,6 +999,8 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -973,11 +1038,11 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JSpinner modifyPhoneSpinner;
     private javax.swing.JButton modifySportButton;
     private javax.swing.JSpinner modifySportCenterSpinner;
+    private javax.swing.JSpinner modifySportCode;
     private javax.swing.JSpinner modifySportCodeSpinner;
-    private javax.swing.JTextField modifySportSportCodeTextField;
-    private javax.swing.JTextField modifySportSportFeesTextField;
-    private javax.swing.JTextField modifySportSportNameTextField;
-    private javax.swing.JTextField modifySportSportScheduleTextField;
+    private javax.swing.JSpinner modifySportFeesSpinner;
+    private javax.swing.JTextField modifySportNameField;
+    private javax.swing.JTextField modifySportScheduleField;
     private javax.swing.JButton searchButton;
     private javax.swing.JSpinner searchIdSpinner;
     private javax.swing.JButton searchRecordButton;

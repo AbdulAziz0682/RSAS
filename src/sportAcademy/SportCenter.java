@@ -34,6 +34,13 @@ public class SportCenter {
         this.name = name;
         this.location = location;
     }
+    public String toPrettyString(){
+        String pretty = "\t\tSPORT CENTER\t\t\n";
+        pretty += "ID: \t"+this.code+"\n";
+        pretty += "Name: \t"+this.name+"\n";
+        pretty += "Location: \t"+this.location+"\n";
+        return pretty;
+    }
     public static String toJson(SportCenter center){
         Gson gson = new Gson();
         return gson.toJson(center, SportCenter.class);

@@ -41,6 +41,17 @@ public class Student {
         this.age = age;
         this.address = address;
     }
+    public String toPrettyString(){
+        String pretty = "\t\tSTUDENT\t\t\n";
+        pretty += "ID: \t"+this.id+"\n";
+        pretty += "Name: \t"+this.name+"\n";
+        pretty += "CenterID: \t"+this.sportCenterCode+"\n";
+        pretty += "SportID: \t"+this.sportCode+"\n";
+        pretty += "CoachID: \t"+this.coachCode+"\n";
+        pretty += "Age: \t"+this.age+"\n";
+        pretty += "Address: \t"+this.address+"\n";
+        return pretty;
+    }
     public static String toJson(Student std){
         Gson gson = new Gson();
         return gson.toJson(std, Student.class);

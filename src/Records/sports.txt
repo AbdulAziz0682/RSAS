@@ -1,1 +1,1 @@
-[{"name":"cricket","code":1,"fees":0},{"name":"Basketball","code":2,"fees":100,"schedule":"From Monday to Friday"}]
+[{"name":"cricket","code":1,"fees":0},{"name":"Basketball","code":2,"fees":50,"schedule":"From Monday to Friday"}]

@@ -139,7 +139,20 @@ public class Coach {
         }
         return false;
     }
-    
+    public String toPrettyString(){
+        String pretty = "\t\tCOACH\t\t\n";
+        pretty += "ID: \t"+this.id+"\n";
+        pretty += "Name: \t"+this.name+"\n";
+        pretty += "Hourly Rate: \t"+this.hourlyRate+"\n";
+        pretty += "CenterID: \t"+this.sportCenterCode+"\n";
+        pretty += "SportID: \t"+this.sportCode+"\n";
+        if(this.dateJoined!=null) pretty += "Joined on: \t"+this.dateJoined.getTime()+"\n";
+        else pretty += "Joined on: \t---\n";
+        if(this.dateTerminated!=null)pretty += "Terminated on: \t"+this.dateTerminated.getTime()+"\n";
+        else pretty += "Terminated on: \t---\n";
+        pretty += "Address: \t"+this.address+"\n";
+        return pretty;
+    }
     public static void main(String[] args){
         Coach c = new Coach(
                 "c1",

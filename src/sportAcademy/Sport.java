@@ -66,6 +66,14 @@ public class Sport {
         this.fees = fees;
         this.schedule = schedule;
     }
+    public String toPrettyString(){
+        String pretty = "\t\tSPORT\t\t\n";
+        pretty += "ID: \t"+this.code+"\n";
+        pretty += "Name: \t"+this.name+"\n";        
+        pretty += "Fees: \t"+this.fees+"\n";
+        pretty += "Schedule: \t"+this.schedule+"\n";
+        return pretty;
+    }
     public static String toJson(Sport sport){
         Gson gson = new Gson();
         return gson.toJson(sport, Sport.class);
@@ -135,5 +143,15 @@ public class Sport {
         }
         return false;
     }
-
+    public static boolean updateInDisk(Sport updatedSportObject){
+        ArrayList<Sport> list = Sport.getAllSports();
+        for(int i=0; i<list.size(); i++){
+            if(updatedSportObject.code==list.get(i).code){
+                list.remove(i);
+                list.add(i, updatedSportObject);
+                return Sport.saveAllToDisk(list); 
+            }
+        }
+        return false;
+    }
 }
