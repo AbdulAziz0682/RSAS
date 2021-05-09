@@ -66,8 +66,6 @@ public class AdminFrame extends javax.swing.JFrame {
         studentIdRadio = new javax.swing.JRadioButton();
         coachRatingsRadio = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        searchSpecificRecordjTable = new javax.swing.JTable();
         searchIdSpinner = new javax.swing.JSpinner();
         jScrollPane2 = new javax.swing.JScrollPane();
         serachResultArea = new javax.swing.JTextArea();
@@ -109,7 +107,6 @@ public class AdminFrame extends javax.swing.JFrame {
         MODIFYPANEL = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -117,17 +114,19 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
         coachModifyButton = new javax.swing.JButton();
-        modifyIdTextField = new javax.swing.JTextField();
-        modifyDateJoinedTextField = new javax.swing.JTextField();
-        modifyPhoneTextField = new javax.swing.JTextField();
-        modifyNameTextField = new javax.swing.JTextField();
-        modifyHourlyRateTextField = new javax.swing.JTextField();
-        modifyCoachSportCenterCodeTextField = new javax.swing.JTextField();
-        modifyAddressTextField = new javax.swing.JTextField();
-        modifyRatingsCode = new javax.swing.JTextField();
-        modifyCodeSportCodeTextField = new javax.swing.JTextField();
+        modifyHourlyRateSpinner = new javax.swing.JSpinner();
+        modifyDateJoinedSpinner = new javax.swing.JSpinner();
+        modifyPhoneSpinner = new javax.swing.JSpinner();
+        modifyCoachNameField = new javax.swing.JTextField();
+        modifySportCenterSpinner = new javax.swing.JSpinner();
+        modifySportCodeSpinner = new javax.swing.JSpinner();
+        modifyAddressField = new javax.swing.JTextField();
+        modifyDateTerminatedSpinner = new javax.swing.JSpinner();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        modifyCoachCodeSpinner = new javax.swing.JSpinner();
         jPanel8 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -231,12 +230,12 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         DefaultTableModel stdTableModel = new DefaultTableModel(new Object[][] {},
-            new String[]{"StudentID", "Sport Center Code","CoachID", "Sport Code", "Age", "Address",});
-        //populateStudentTable(stdTableModel);
-        jTable4.setModel(coachTableModel);
+            new String[]{"StudentID", "Name", "Sport Center Code", "CoachID",  "Sport Code","Age", "Address"});
+        populateStudentTable(stdTableModel);
+        jTable4.setModel(stdTableModel);
         jScrollPane6.setViewportView(jTable4);
 
-        jPanel4.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 22, 928, 282));
+        jPanel4.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 810, 282));
 
         jTabbedPane1.addTab("REGISTERD STUDENTS", jPanel4);
 
@@ -311,21 +310,6 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel2.setText("SEARCH");
         SearchRecordPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 157, -1, -1));
 
-        searchSpecificRecordjTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(searchSpecificRecordjTable);
-
-        SearchRecordPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 135, -1, 100));
-
         searchIdSpinner.setModel(new javax.swing.SpinnerNumberModel());
         SearchRecordPanel.add(searchIdSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 110, 30));
 
@@ -333,7 +317,7 @@ public class AdminFrame extends javax.swing.JFrame {
         serachResultArea.setRows(5);
         jScrollPane2.setViewportView(serachResultArea);
 
-        SearchRecordPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 450, 280));
+        SearchRecordPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 450, 370));
 
         searchButton.setText("Search");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -489,13 +473,9 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("ID");
-        jPanel7.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 37, 32, -1));
-
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setText("NAME");
-        jPanel7.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 86, -1, -1));
+        jPanel7.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel18.setText("HOURLY RATE");
@@ -503,7 +483,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setText("DATE JOINED");
-        jPanel7.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 135, -1, -1));
+        jPanel7.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel20.setText("PHONE");
@@ -521,10 +501,6 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel23.setText("SPORT CODE");
         jPanel7.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 380, -1, -1));
 
-        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel24.setText("RATINGS (1 - 5) ");
-        jPanel7.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 429, -1, -1));
-
         coachModifyButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         coachModifyButton.setText("MODIFY");
         coachModifyButton.addActionListener(new java.awt.event.ActionListener() {
@@ -532,64 +508,52 @@ public class AdminFrame extends javax.swing.JFrame {
                 coachModifyButtonActionPerformed(evt);
             }
         });
-        jPanel7.add(coachModifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 471, -1, -1));
+        jPanel7.add(coachModifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 510, -1, -1));
 
-        modifyIdTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel7.add(modifyIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 30, 167, 31));
+        modifyHourlyRateSpinner.setModel(new javax.swing.SpinnerNumberModel());
+        jPanel7.add(modifyHourlyRateSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 170, 30));
 
-        modifyDateJoinedTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel7.add(modifyDateJoinedTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 128, 167, 31));
+        modifyDateJoinedSpinner.setModel(new javax.swing.SpinnerDateModel());
+        jPanel7.add(modifyDateJoinedSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 170, 30));
 
-        modifyPhoneTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        modifyPhoneTextField.addActionListener(new java.awt.event.ActionListener() {
+        modifyPhoneSpinner.setModel(new javax.swing.SpinnerNumberModel(10000000000L, 10000000000L, null, 1L));
+        jPanel7.add(modifyPhoneSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 170, 30));
+
+        modifyCoachNameField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel7.add(modifyCoachNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 167, 31));
+
+        modifySportCenterSpinner.setModel(new javax.swing.SpinnerNumberModel());
+        jPanel7.add(modifySportCenterSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 170, 30));
+
+        modifySportCodeSpinner.setModel(new javax.swing.SpinnerNumberModel());
+        jPanel7.add(modifySportCodeSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 170, 30));
+
+        modifyAddressField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        modifyAddressField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyPhoneTextFieldActionPerformed(evt);
+                modifyAddressFieldActionPerformed(evt);
             }
         });
-        jPanel7.add(modifyPhoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 226, 167, 31));
+        jPanel7.add(modifyAddressField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 167, 31));
 
-        modifyNameTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel7.add(modifyNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 79, 167, 31));
+        modifyDateTerminatedSpinner.setModel(new javax.swing.SpinnerDateModel());
+        jPanel7.add(modifyDateTerminatedSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, 170, 30));
 
-        modifyHourlyRateTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        modifyHourlyRateTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyHourlyRateTextFieldActionPerformed(evt);
-            }
-        });
-        jPanel7.add(modifyHourlyRateTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 177, 167, 31));
+        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel31.setText("DATE TERMINATED");
+        jPanel7.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
 
-        modifyCoachSportCenterCodeTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        modifyCoachSportCenterCodeTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyCoachSportCenterCodeTextFieldActionPerformed(evt);
-            }
-        });
-        jPanel7.add(modifyCoachSportCenterCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 324, 167, 31));
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel32.setText("Modify Coach Record");
+        jPanel7.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 340, 40));
 
-        modifyAddressTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        modifyAddressTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyAddressTextFieldActionPerformed(evt);
-            }
-        });
-        jPanel7.add(modifyAddressTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 275, 167, 31));
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel24.setText("Code/ID");
+        jPanel7.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
-        modifyRatingsCode.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        modifyRatingsCode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyRatingsCodeActionPerformed(evt);
-            }
-        });
-        jPanel7.add(modifyRatingsCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 422, 167, 31));
-
-        modifyCodeSportCodeTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        modifyCodeSportCodeTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyCodeSportCodeTextFieldActionPerformed(evt);
-            }
-        });
-        jPanel7.add(modifyCodeSportCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 373, 167, 31));
+        modifyCoachCodeSpinner.setModel(new javax.swing.SpinnerNumberModel());
+        jPanel7.add(modifyCoachCodeSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 170, 30));
 
         jTabbedPane3.addTab("COACH", jPanel7);
 
@@ -691,32 +655,40 @@ public class AdminFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_addAddressFieldActionPerformed
 
-    private void modifyPhoneTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyPhoneTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modifyPhoneTextFieldActionPerformed
-
-    private void modifyHourlyRateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyHourlyRateTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modifyHourlyRateTextFieldActionPerformed
-
-    private void modifyCoachSportCenterCodeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyCoachSportCenterCodeTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modifyCoachSportCenterCodeTextFieldActionPerformed
-
-    private void modifyAddressTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyAddressTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modifyAddressTextFieldActionPerformed
-
-    private void modifyRatingsCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyRatingsCodeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modifyRatingsCodeActionPerformed
-
-    private void modifyCodeSportCodeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyCodeSportCodeTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modifyCodeSportCodeTextFieldActionPerformed
-
     private void coachModifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coachModifyButtonActionPerformed
         // TODO add your handling code here:
+        if(Coach.findInDisk((int)modifyCoachCodeSpinner.getValue())==null) {
+            JOptionPane.showMessageDialog(AdminFrame.this, "Please enter a valid code, Coach record not found");
+            return;
+        }
+        if(SportCenter.findInDisk((int)modifySportCenterSpinner.getValue())==null){
+            JOptionPane.showMessageDialog(AdminFrame.this, "Please enter a valid sport center code, sport center record not found");
+            return;            
+        }
+        if(Sport.findInDisk((int)modifySportCodeSpinner.getValue())==null){
+            JOptionPane.showMessageDialog(AdminFrame.this, "Please enter a valid sport code, sport record not found");
+            return;  
+        }
+        GregorianCalendar modifiedDateJoined = (GregorianCalendar) GregorianCalendar.getInstance();
+        modifiedDateJoined.setTime((Date) modifyDateJoinedSpinner.getValue());
+        GregorianCalendar modifiedDateTerminated = (GregorianCalendar) GregorianCalendar.getInstance();
+        modifiedDateTerminated.setTime((Date) modifyDateTerminatedSpinner.getValue());
+        if(modifiedDateTerminated.compareTo(modifiedDateJoined)<=0){
+            JOptionPane.showMessageDialog(AdminFrame.this, "Please enter a valid termination date, cannot leave before joining date");
+            return;              
+        }
+        Coach modified = new Coach(
+                modifyCoachNameField.getText(),//Name
+                modifiedDateJoined,//date joined
+                (int)modifyHourlyRateSpinner.getValue(),//hourly rate
+                (long) modifyPhoneSpinner.getValue(),//phone
+                modifyAddressField.getText(),//address
+                (int)modifySportCenterSpinner.getValue(),//sportcenter
+                (int)modifySportCodeSpinner.getValue()//sportcode                
+        );
+        modified.setDateTerminated(modifiedDateTerminated);
+        modified.setId((int)modifyCoachCodeSpinner.getValue());
+        Coach.updateInDisk(modified);
     }//GEN-LAST:event_coachModifyButtonActionPerformed
 
     private void sportIdRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sportIdRadioActionPerformed
@@ -788,6 +760,9 @@ public class AdminFrame extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Record not found...");             
             }
         }
+        else{
+            JOptionPane.showMessageDialog(AdminFrame.this, "Please select any of the following options...");
+        }
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void modifySportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifySportButtonActionPerformed
@@ -809,6 +784,10 @@ public class AdminFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(AdminFrame.this, "Couldn't save record....");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void modifyAddressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyAddressFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modifyAddressFieldActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -842,6 +821,25 @@ public class AdminFrame extends javax.swing.JFrame {
                 new AdminFrame().setVisible(true);
             }
         });
+    }
+    private void populateStudentTable(DefaultTableModel stdTableModel){
+        ArrayList<Student> stdList = Student.getAllStudents();
+        if(stdTableModel.getRowCount()>0){
+            for(int i=0; i<stdTableModel.getRowCount(); i++){
+                stdTableModel.removeRow(i);
+            }
+        }
+        for(int i=0; i<stdList.size(); i++){
+            Object[] row = new Object[10];
+            row[0] = stdList.get(i).getId();
+            row[1] = stdList.get(i).getName();
+            row[2] = stdList.get(i).getSportCenterCode();
+            row[3] = stdList.get(i).getCoachCode();
+            row[4] = stdList.get(i).getSportCode();
+            row[5] = stdList.get(i).getAge();
+            row[6] = stdList.get(i).getAddress();
+            stdTableModel.addRow(row);
+        }
     }
     private void populateSportTable(DefaultTableModel sportTableModel){
         ArrayList<Sport> sportList = Sport.getAllSports();
@@ -936,7 +934,8 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -951,7 +950,6 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -965,17 +963,17 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
-    private javax.swing.JTextField modifyAddressTextField;
+    private javax.swing.JTextField modifyAddressField;
     private javax.swing.JButton modifyButton;
-    private javax.swing.JTextField modifyCoachSportCenterCodeTextField;
-    private javax.swing.JTextField modifyCodeSportCodeTextField;
-    private javax.swing.JTextField modifyDateJoinedTextField;
-    private javax.swing.JTextField modifyHourlyRateTextField;
-    private javax.swing.JTextField modifyIdTextField;
-    private javax.swing.JTextField modifyNameTextField;
-    private javax.swing.JTextField modifyPhoneTextField;
-    private javax.swing.JTextField modifyRatingsCode;
+    private javax.swing.JSpinner modifyCoachCodeSpinner;
+    private javax.swing.JTextField modifyCoachNameField;
+    private javax.swing.JSpinner modifyDateJoinedSpinner;
+    private javax.swing.JSpinner modifyDateTerminatedSpinner;
+    private javax.swing.JSpinner modifyHourlyRateSpinner;
+    private javax.swing.JSpinner modifyPhoneSpinner;
     private javax.swing.JButton modifySportButton;
+    private javax.swing.JSpinner modifySportCenterSpinner;
+    private javax.swing.JSpinner modifySportCodeSpinner;
     private javax.swing.JTextField modifySportSportCodeTextField;
     private javax.swing.JTextField modifySportSportFeesTextField;
     private javax.swing.JTextField modifySportSportNameTextField;
@@ -983,7 +981,6 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JButton searchButton;
     private javax.swing.JSpinner searchIdSpinner;
     private javax.swing.JButton searchRecordButton;
-    private javax.swing.JTable searchSpecificRecordjTable;
     private javax.swing.JTextArea serachResultArea;
     private javax.swing.JButton sortAndDisplayButton;
     private javax.swing.JRadioButton sportIdRadio;

@@ -50,6 +50,10 @@ public class Coach {
         Gson gson = new Gson();
         return gson.toJson(coach, Coach.class);
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public static Coach fromJson(String json){
         Gson gson = new Gson(); 
         return gson.fromJson(json, Coach.class);
