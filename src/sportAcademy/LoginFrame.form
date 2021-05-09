@@ -51,8 +51,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jButton2" min="-2" pref="65" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="userButton" min="-2" pref="65" max="-2" attributes="0"/>
+                      <Component id="adminButton" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="30" max="32767" attributes="0"/>
               </Group>
@@ -62,16 +62,16 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="adminButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="userButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="adminButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="0" red="cc" type="rgb"/>
@@ -79,10 +79,10 @@
             <Property name="text" type="java.lang.String" value="ADMIN"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adminButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="userButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="0" red="cc" type="rgb"/>
@@ -90,7 +90,7 @@
             <Property name="text" type="java.lang.String" value="USER"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userButtonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -135,7 +135,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                              <Component id="jButton4" min="-2" pref="113" max="-2" attributes="0"/>
+                              <Component id="AdminLogin" min="-2" pref="113" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -161,7 +161,7 @@
                           </Group>
                       </Group>
                       <EmptySpace pref="86" max="32767" attributes="0"/>
-                      <Component id="jButton4" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="AdminLogin" min="-2" pref="32" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -224,7 +224,7 @@
                 <Property name="text" type="java.lang.String" value="ADMIN"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton4">
+            <Component class="javax.swing.JButton" name="AdminLogin">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fe" green="0" red="0" type="rgb"/>
@@ -238,7 +238,7 @@
                 <Property name="text" type="java.lang.String" value="LOGIN"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AdminLoginActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -279,7 +279,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
-                              <Component id="jButton3" min="-2" pref="113" max="-2" attributes="0"/>
+                              <Component id="userLogin" min="-2" pref="113" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -302,7 +302,7 @@
                           <Component id="userPassword" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="userLogin" min="-2" pref="32" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -365,7 +365,7 @@
                 <Property name="text" type="java.lang.String" value="USER"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="userLogin">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fe" green="0" red="0" type="rgb"/>
@@ -379,7 +379,7 @@
                 <Property name="text" type="java.lang.String" value="LOGIN"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userLoginActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

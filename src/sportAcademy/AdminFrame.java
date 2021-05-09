@@ -35,12 +35,12 @@ public class AdminFrame extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        addRecordButton = new javax.swing.JButton();
+        displayRecordButton = new javax.swing.JButton();
+        searchRecordButton = new javax.swing.JButton();
+        sortAndDisplayButton = new javax.swing.JButton();
+        modifyButton = new javax.swing.JButton();
+        exitButton = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -48,13 +48,13 @@ public class AdminFrame extends javax.swing.JFrame {
         jTable3 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        sportjTable = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jButton9 = new javax.swing.JButton();
         SortAndDisplayPanel = new javax.swing.JPanel();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
+        ascendingOrderRadioButton = new javax.swing.JRadioButton();
+        hourlyRateRadioButton = new javax.swing.JRadioButton();
+        coachPerformanceRadioButton = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
@@ -66,7 +66,7 @@ public class AdminFrame extends javax.swing.JFrame {
         coachRatingsRadio = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        searchSpecificRecordjTable = new javax.swing.JTable();
         searchIdSpinner = new javax.swing.JSpinner();
         jScrollPane2 = new javax.swing.JScrollPane();
         serachResultArea = new javax.swing.JTextArea();
@@ -115,26 +115,27 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jButton11 = new javax.swing.JButton();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
+        coachModifyButton = new javax.swing.JButton();
+        modifyIdTextField = new javax.swing.JTextField();
+        modifyDateJoinedTextField = new javax.swing.JTextField();
+        modifyPhoneTextField = new javax.swing.JTextField();
+        modifyNameTextField = new javax.swing.JTextField();
+        modifyHourlyRateTextField = new javax.swing.JTextField();
+        modifyCoachSportCenterCodeTextField = new javax.swing.JTextField();
+        modifyAddressTextField = new javax.swing.JTextField();
+        modifyRatingsCode = new javax.swing.JTextField();
+        modifyCodeSportCodeTextField = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jButton12 = new javax.swing.JButton();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
-        jTextField25 = new javax.swing.JTextField();
-        jTextField26 = new javax.swing.JTextField();
+        modifySportSportCodeTextField = new javax.swing.JTextField();
+        modifySportSportNameTextField = new javax.swing.JTextField();
+        modifySportSportScheduleTextField = new javax.swing.JTextField();
+        modifySportSportFeesTextField = new javax.swing.JTextField();
+        modifySportButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -142,59 +143,59 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Add Record");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        addRecordButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        addRecordButton.setText("Add Record");
+        addRecordButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                addRecordButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 255, 157, -1));
+        jPanel1.add(addRecordButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 255, 157, -1));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setText("DisplaylRecord");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        displayRecordButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        displayRecordButton.setText("DisplaylRecord");
+        displayRecordButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                displayRecordButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 157, -1));
+        jPanel1.add(displayRecordButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 157, -1));
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setText("Search Record");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        searchRecordButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        searchRecordButton.setText("Search Record");
+        searchRecordButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                searchRecordButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 157, -1));
+        jPanel1.add(searchRecordButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 157, -1));
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton4.setText("Sort And Display");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        sortAndDisplayButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        sortAndDisplayButton.setText("Sort And Display");
+        sortAndDisplayButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                sortAndDisplayButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 145, 157, -1));
+        jPanel1.add(sortAndDisplayButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 145, 157, -1));
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton5.setText("Modify");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        modifyButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        modifyButton.setText("Modify");
+        modifyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                modifyButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 157, -1));
+        jPanel1.add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 157, -1));
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton6.setText("Exit");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        exitButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        exitButton.setText("Exit");
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                exitButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 365, 157, -1));
+        jPanel1.add(exitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 365, 157, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 631));
 
@@ -214,7 +215,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        sportjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -225,7 +226,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 "CODE", "NAME", "FEES", "SCHEDULE"
             }
         ));
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane4.setViewportView(sportjTable);
 
         jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 31, 576, 218));
 
@@ -242,20 +243,20 @@ public class AdminFrame extends javax.swing.JFrame {
 
         SortAndDisplayPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buttonGroup1.add(jRadioButton5);
-        jRadioButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jRadioButton5.setText("COACHES IN ASCENDING ORDER BY NAME");
-        SortAndDisplayPanel.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 112, -1, -1));
+        buttonGroup1.add(ascendingOrderRadioButton);
+        ascendingOrderRadioButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ascendingOrderRadioButton.setText("COACHES IN ASCENDING ORDER BY NAME");
+        SortAndDisplayPanel.add(ascendingOrderRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 112, -1, -1));
 
-        buttonGroup1.add(jRadioButton6);
-        jRadioButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jRadioButton6.setText("HOURLY PAY RATE IN ASCENDING ORDER");
-        SortAndDisplayPanel.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 112, -1, -1));
+        buttonGroup1.add(hourlyRateRadioButton);
+        hourlyRateRadioButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        hourlyRateRadioButton.setText("HOURLY PAY RATE IN ASCENDING ORDER");
+        SortAndDisplayPanel.add(hourlyRateRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 112, -1, -1));
 
-        buttonGroup1.add(jRadioButton7);
-        jRadioButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jRadioButton7.setText("COACHES BY OVERALL PERFOMANCE IN ASCENDING ORDER");
-        SortAndDisplayPanel.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 173, -1, -1));
+        buttonGroup1.add(coachPerformanceRadioButton);
+        coachPerformanceRadioButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        coachPerformanceRadioButton.setText("COACHES BY OVERALL PERFOMANCE IN ASCENDING ORDER");
+        SortAndDisplayPanel.add(coachPerformanceRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 173, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("SORT AND DISPLAY");
@@ -309,7 +310,7 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel2.setText("SEARCH");
         SearchRecordPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 157, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        searchSpecificRecordjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -320,7 +321,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(searchSpecificRecordjTable);
 
         SearchRecordPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 135, -1, 100));
 
@@ -457,7 +458,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("SPORT", jPanel6);
 
-        addRecordPanel.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        addRecordPanel.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, -1));
 
         jSpinner4.setModel(new javax.swing.SpinnerNumberModel());
         addRecordPanel.add(jSpinner4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 170, 30));
@@ -509,71 +510,71 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel24.setText("RATINGS (1 - 5) ");
         jPanel7.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 429, -1, -1));
 
-        jButton11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton11.setText("MODIFY");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        coachModifyButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        coachModifyButton.setText("MODIFY");
+        coachModifyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                coachModifyButtonActionPerformed(evt);
             }
         });
-        jPanel7.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 471, -1, -1));
+        jPanel7.add(coachModifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 471, -1, -1));
 
-        jTextField14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel7.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 30, 167, 31));
+        modifyIdTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel7.add(modifyIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 30, 167, 31));
 
-        jTextField15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel7.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 128, 167, 31));
+        modifyDateJoinedTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel7.add(modifyDateJoinedTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 128, 167, 31));
 
-        jTextField16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        modifyPhoneTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        modifyPhoneTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                modifyPhoneTextFieldActionPerformed(evt);
             }
         });
-        jPanel7.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 226, 167, 31));
+        jPanel7.add(modifyPhoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 226, 167, 31));
 
-        jTextField17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel7.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 79, 167, 31));
+        modifyNameTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel7.add(modifyNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 79, 167, 31));
 
-        jTextField18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField18.addActionListener(new java.awt.event.ActionListener() {
+        modifyHourlyRateTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        modifyHourlyRateTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField18ActionPerformed(evt);
+                modifyHourlyRateTextFieldActionPerformed(evt);
             }
         });
-        jPanel7.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 177, 167, 31));
+        jPanel7.add(modifyHourlyRateTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 177, 167, 31));
 
-        jTextField19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField19.addActionListener(new java.awt.event.ActionListener() {
+        modifyCoachSportCenterCodeTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        modifyCoachSportCenterCodeTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField19ActionPerformed(evt);
+                modifyCoachSportCenterCodeTextFieldActionPerformed(evt);
             }
         });
-        jPanel7.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 324, 167, 31));
+        jPanel7.add(modifyCoachSportCenterCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 324, 167, 31));
 
-        jTextField20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField20.addActionListener(new java.awt.event.ActionListener() {
+        modifyAddressTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        modifyAddressTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField20ActionPerformed(evt);
+                modifyAddressTextFieldActionPerformed(evt);
             }
         });
-        jPanel7.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 275, 167, 31));
+        jPanel7.add(modifyAddressTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 275, 167, 31));
 
-        jTextField21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField21.addActionListener(new java.awt.event.ActionListener() {
+        modifyRatingsCode.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        modifyRatingsCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField21ActionPerformed(evt);
+                modifyRatingsCodeActionPerformed(evt);
             }
         });
-        jPanel7.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 422, 167, 31));
+        jPanel7.add(modifyRatingsCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 422, 167, 31));
 
-        jTextField22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField22.addActionListener(new java.awt.event.ActionListener() {
+        modifyCodeSportCodeTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        modifyCodeSportCodeTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField22ActionPerformed(evt);
+                modifyCodeSportCodeTextFieldActionPerformed(evt);
             }
         });
-        jPanel7.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 373, 167, 31));
+        jPanel7.add(modifyCodeSportCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 373, 167, 31));
 
         jTabbedPane3.addTab("COACH", jPanel7);
 
@@ -599,21 +600,30 @@ public class AdminFrame extends javax.swing.JFrame {
         jButton12.setText("MODIFY");
         jPanel8.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 528, 114, -1));
 
-        jTextField23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel8.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 73, 141, 34));
+        modifySportSportCodeTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel8.add(modifySportSportCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 73, 141, 34));
 
-        jTextField24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel8.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 180, 141, 34));
+        modifySportSportNameTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel8.add(modifySportSportNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 180, 141, 34));
 
-        jTextField25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel8.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 394, 141, 34));
+        modifySportSportScheduleTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel8.add(modifySportSportScheduleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 394, 141, 34));
 
-        jTextField26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel8.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 287, 141, 34));
+        modifySportSportFeesTextField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel8.add(modifySportSportFeesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 287, 141, 34));
+
+        modifySportButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        modifySportButton.setText("MODIFY");
+        modifySportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifySportButtonActionPerformed(evt);
+            }
+        });
+        jPanel8.add(modifySportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 471, -1, -1));
 
         jTabbedPane3.addTab("SPORT", jPanel8);
 
-        MODIFYPANEL.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        MODIFYPANEL.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, -1));
 
         jLayeredPane1.add(MODIFYPANEL, "card6");
 
@@ -623,76 +633,76 @@ public class AdminFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void displayRecordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayRecordButtonActionPerformed
         jLayeredPane1.removeAll();
         jLayeredPane1.add(jTabbedPane1);
         jLayeredPane1.repaint();
         jLayeredPane1.revalidate();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_displayRecordButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void sortAndDisplayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortAndDisplayButtonActionPerformed
          jLayeredPane1.removeAll();
         jLayeredPane1.add(SortAndDisplayPanel);
         jLayeredPane1.repaint();
         jLayeredPane1.revalidate();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_sortAndDisplayButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void searchRecordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchRecordButtonActionPerformed
          jLayeredPane1.removeAll();
         jLayeredPane1.add(SearchRecordPanel);
         jLayeredPane1.repaint();
         jLayeredPane1.revalidate();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_searchRecordButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void addRecordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addRecordButtonActionPerformed
         jLayeredPane1.removeAll();
         jLayeredPane1.add(addRecordPanel);
         jLayeredPane1.repaint();
         jLayeredPane1.revalidate();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_addRecordButtonActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
         jLayeredPane1.removeAll();
         jLayeredPane1.add(MODIFYPANEL);
         jLayeredPane1.repaint();
         jLayeredPane1.revalidate();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_modifyButtonActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_exitButtonActionPerformed
 
     private void addAddressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAddressFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addAddressFieldActionPerformed
 
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+    private void modifyPhoneTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyPhoneTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
+    }//GEN-LAST:event_modifyPhoneTextFieldActionPerformed
 
-    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
+    private void modifyHourlyRateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyHourlyRateTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField18ActionPerformed
+    }//GEN-LAST:event_modifyHourlyRateTextFieldActionPerformed
 
-    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
+    private void modifyCoachSportCenterCodeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyCoachSportCenterCodeTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField19ActionPerformed
+    }//GEN-LAST:event_modifyCoachSportCenterCodeTextFieldActionPerformed
 
-    private void jTextField20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField20ActionPerformed
+    private void modifyAddressTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyAddressTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField20ActionPerformed
+    }//GEN-LAST:event_modifyAddressTextFieldActionPerformed
 
-    private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
+    private void modifyRatingsCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyRatingsCodeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField21ActionPerformed
+    }//GEN-LAST:event_modifyRatingsCodeActionPerformed
 
-    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
+    private void modifyCodeSportCodeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyCodeSportCodeTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField22ActionPerformed
+    }//GEN-LAST:event_modifyCodeSportCodeTextFieldActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void coachModifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coachModifyButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_coachModifyButtonActionPerformed
 
     private void sportIdRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sportIdRadioActionPerformed
         // TODO add your handling code here:
@@ -746,6 +756,10 @@ public class AdminFrame extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void modifySportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifySportButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modifySportButtonActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -812,22 +826,22 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JSpinner addDateJoinedSpinner;
     private javax.swing.JSpinner addHourlyRateSpinner;
     private javax.swing.JSpinner addPhoneSpinner;
+    private javax.swing.JButton addRecordButton;
     private javax.swing.JPanel addRecordPanel;
     private javax.swing.JSpinner addSportCenterSpinner;
     private javax.swing.JSpinner addSportCodeSpinner;
+    private javax.swing.JRadioButton ascendingOrderRadioButton;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JRadioButton coachIdRadio;
+    private javax.swing.JButton coachModifyButton;
+    private javax.swing.JRadioButton coachPerformanceRadioButton;
     private javax.swing.JRadioButton coachRatingsRadio;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton displayRecordButton;
+    private javax.swing.JButton exitButton;
+    private javax.swing.JRadioButton hourlyRateRadioButton;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
@@ -867,9 +881,6 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -880,31 +891,35 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
+    private javax.swing.JTextField modifyAddressTextField;
+    private javax.swing.JButton modifyButton;
+    private javax.swing.JTextField modifyCoachSportCenterCodeTextField;
+    private javax.swing.JTextField modifyCodeSportCodeTextField;
+    private javax.swing.JTextField modifyDateJoinedTextField;
+    private javax.swing.JTextField modifyHourlyRateTextField;
+    private javax.swing.JTextField modifyIdTextField;
+    private javax.swing.JTextField modifyNameTextField;
+    private javax.swing.JTextField modifyPhoneTextField;
+    private javax.swing.JTextField modifyRatingsCode;
+    private javax.swing.JButton modifySportButton;
+    private javax.swing.JTextField modifySportSportCodeTextField;
+    private javax.swing.JTextField modifySportSportFeesTextField;
+    private javax.swing.JTextField modifySportSportNameTextField;
+    private javax.swing.JTextField modifySportSportScheduleTextField;
     private javax.swing.JButton searchButton;
     private javax.swing.JSpinner searchIdSpinner;
+    private javax.swing.JButton searchRecordButton;
+    private javax.swing.JTable searchSpecificRecordjTable;
     private javax.swing.JTextArea serachResultArea;
+    private javax.swing.JButton sortAndDisplayButton;
     private javax.swing.JRadioButton sportIdRadio;
+    private javax.swing.JTable sportjTable;
     private javax.swing.JRadioButton studentIdRadio;
     // End of variables declaration//GEN-END:variables
 }
