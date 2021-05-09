@@ -63,6 +63,7 @@ public class Coach {
                 StandardCharsets.UTF_8)) {
             
             Coach c[] = gson.fromJson(reader, Coach[].class);
+            if(c!=null)
             for(int i=0; i<c.length; i++){
                 System.out.println("Record from file: "+c[i].id);
                 list.add(c[i]);

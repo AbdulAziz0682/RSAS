@@ -50,7 +50,8 @@ public class AdminFrame extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         sportjTable = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        jButton9 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
         SortAndDisplayPanel = new javax.swing.JPanel();
         ascendingOrderRadioButton = new javax.swing.JRadioButton();
         hourlyRateRadioButton = new javax.swing.JRadioButton();
@@ -229,8 +230,13 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton9.setText("jButton9");
-        jPanel4.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 98, -1, -1));
+        DefaultTableModel stdTableModel = new DefaultTableModel(new Object[][] {},
+            new String[]{"StudentID", "Sport Center Code","CoachID", "Sport Code", "Age", "Address",});
+        //populateStudentTable(stdTableModel);
+        jTable4.setModel(coachTableModel);
+        jScrollPane6.setViewportView(jTable4);
+
+        jPanel4.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 22, 928, 282));
 
         jTabbedPane1.addTab("REGISTERD STUDENTS", jPanel4);
 
@@ -773,6 +779,15 @@ public class AdminFrame extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Record not found...");             
             }
         }
+        else if(studentIdRadio.isSelected()){
+            Student foundStd = Student.findInDisk((int) searchIdSpinner.getValue());
+            if(foundStd!=null){
+                this.serachResultArea.setText(Student.toJson(foundStd));
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Record not found...");             
+            }
+        }
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void modifySportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifySportButtonActionPerformed
@@ -897,7 +912,6 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -942,12 +956,14 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSpinner jSpinner4;
     private javax.swing.JSpinner jSpinner5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTextField modifyAddressTextField;
     private javax.swing.JButton modifyButton;
