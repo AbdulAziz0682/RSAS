@@ -708,6 +708,10 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        if(Coach.findInDisk((int) addCoachIdSpinner.getValue())!=null) {
+            JOptionPane.showMessageDialog(AdminFrame.this, "Couldn't save, coach code already exists");
+            return ;
+        }
         if(SportCenter.findInDisk((int)addSportCenterSpinner.getValue())==null){
             JOptionPane.showMessageDialog(AdminFrame.this, "Please enter a valid sport center code, sport center record not found");
             return;            
@@ -727,6 +731,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 (int) addSportCenterSpinner.getValue(),//sportcentercode
                 (int) addSportCodeSpinner.getValue()//sportcenter
         );
+        newCoach.setId((int) addCoachIdSpinner.getValue());
         if(newCoach.saveToDisk()){//If successfull
             JOptionPane.showMessageDialog(AdminFrame.this, "Coach Record added successfully");
         }
@@ -805,6 +810,10 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        if(Sport.findInDisk((int) addSportCode.getValue())!=null) {
+            JOptionPane.showMessageDialog(AdminFrame.this, "Couldn't save, sport code already exists");
+            return ;
+        }
         Sport newSport = new Sport(
                 (int) addSportCode.getValue(),//code
                 addSportName.getText(),//name

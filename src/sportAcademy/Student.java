@@ -30,6 +30,15 @@ public class Student {
     private int sportCode;
     private int age;
     private String address;
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
     
     public Student(){}
 

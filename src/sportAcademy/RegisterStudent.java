@@ -6,10 +6,20 @@
 package sportAcademy;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.GroupLayout;
+import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
 
@@ -37,6 +47,23 @@ public class RegisterStudent extends javax.swing.JFrame {
         jLabel1 = new JLabel();
         nameLabel = new JLabel();
         nameLabel1 = new JLabel();
+        nameLabel2 = new JLabel();
+        nameLabel3 = new JLabel();
+        nameLabel4 = new JLabel();
+        nameLabel5 = new JLabel();
+        regStudentName = new JTextField();
+        regAge = new JSpinner();
+        regSportCenterCode = new JSpinner();
+        regSportCode = new JSpinner();
+        regCoachCode = new JSpinner();
+        jButton1 = new JButton();
+        jButton2 = new JButton();
+        nameLabel6 = new JLabel();
+        regStudentAddress = new JTextField();
+        regPassword = new JPasswordField();
+        foundCoachLabel = new JLabel();
+        foundCenterLabel = new JLabel();
+        foundSportLabel = new JLabel();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new AbsoluteLayout());
@@ -48,17 +75,191 @@ public class RegisterStudent extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new AbsoluteConstraints(10, 10, 640, 50));
 
         nameLabel.setFont(new Font("Tahoma", 1, 14)); // NOI18N
-        nameLabel.setText("Sport Center Code:");
+        nameLabel.setText("Password");
         nameLabel.setName("nameLabel"); // NOI18N
-        getContentPane().add(nameLabel, new AbsoluteConstraints(40, 120, 160, 30));
+        getContentPane().add(nameLabel, new AbsoluteConstraints(40, 320, 160, 30));
 
         nameLabel1.setFont(new Font("Tahoma", 1, 14)); // NOI18N
         nameLabel1.setText("Name:");
         nameLabel1.setName("nameLabel1"); // NOI18N
         getContentPane().add(nameLabel1, new AbsoluteConstraints(40, 80, 160, 30));
 
+        nameLabel2.setFont(new Font("Tahoma", 1, 14)); // NOI18N
+        nameLabel2.setText("Sport Code/ID:");
+        nameLabel2.setName("nameLabel2"); // NOI18N
+        getContentPane().add(nameLabel2, new AbsoluteConstraints(40, 160, 160, 30));
+
+        nameLabel3.setFont(new Font("Tahoma", 1, 14)); // NOI18N
+        nameLabel3.setText("Sport Center Code/ID:");
+        nameLabel3.setName("nameLabel3"); // NOI18N
+        getContentPane().add(nameLabel3, new AbsoluteConstraints(40, 120, 160, 30));
+
+        nameLabel4.setFont(new Font("Tahoma", 1, 14)); // NOI18N
+        nameLabel4.setText("Coach Code/ID:");
+        nameLabel4.setName("nameLabel4"); // NOI18N
+        getContentPane().add(nameLabel4, new AbsoluteConstraints(40, 200, 160, 30));
+
+        nameLabel5.setFont(new Font("Tahoma", 1, 14)); // NOI18N
+        nameLabel5.setText("Age:");
+        nameLabel5.setName("nameLabel5"); // NOI18N
+        getContentPane().add(nameLabel5, new AbsoluteConstraints(40, 240, 160, 30));
+
+        regStudentName.setName("regStudentName"); // NOI18N
+        getContentPane().add(regStudentName, new AbsoluteConstraints(230, 80, 310, 30));
+
+        regAge.setModel(new SpinnerNumberModel());
+        regAge.setName("regAge"); // NOI18N
+        getContentPane().add(regAge, new AbsoluteConstraints(230, 240, 150, 30));
+
+        regSportCenterCode.setModel(new SpinnerNumberModel());
+        regSportCenterCode.setName("regSportCenterCode"); // NOI18N
+        regSportCenterCode.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent evt) {
+                regSportCenterCodeStateChanged(evt);
+            }
+        });
+        getContentPane().add(regSportCenterCode, new AbsoluteConstraints(230, 120, 150, 30));
+
+        regSportCode.setModel(new SpinnerNumberModel());
+        regSportCode.setName("regSportCode"); // NOI18N
+        regSportCode.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent evt) {
+                regSportCodeStateChanged(evt);
+            }
+        });
+        getContentPane().add(regSportCode, new AbsoluteConstraints(230, 160, 150, 30));
+
+        regCoachCode.setModel(new SpinnerNumberModel());
+        regCoachCode.setName("regCoachCode"); // NOI18N
+        regCoachCode.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent evt) {
+                regCoachCodeStateChanged(evt);
+            }
+        });
+        getContentPane().add(regCoachCode, new AbsoluteConstraints(230, 200, 150, 30));
+
+        jButton1.setText("Register");
+        jButton1.setName("jButton1"); // NOI18N
+        jButton1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new AbsoluteConstraints(440, 370, 90, 30));
+
+        jButton2.setText("Cancel");
+        jButton2.setName("jButton2"); // NOI18N
+        jButton2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new AbsoluteConstraints(40, 370, 90, 30));
+
+        nameLabel6.setFont(new Font("Tahoma", 1, 14)); // NOI18N
+        nameLabel6.setText("Address:");
+        nameLabel6.setName("nameLabel6"); // NOI18N
+        getContentPane().add(nameLabel6, new AbsoluteConstraints(40, 280, 160, 30));
+
+        regStudentAddress.setName("regStudentAddress"); // NOI18N
+        regStudentAddress.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                regStudentAddressActionPerformed(evt);
+            }
+        });
+        getContentPane().add(regStudentAddress, new AbsoluteConstraints(230, 280, 310, 30));
+
+        regPassword.setName("regPassword"); // NOI18N
+        getContentPane().add(regPassword, new AbsoluteConstraints(230, 320, 180, 30));
+
+        foundCoachLabel.setText("No coach found");
+        foundCoachLabel.setName("foundCoachLabel"); // NOI18N
+        getContentPane().add(foundCoachLabel, new AbsoluteConstraints(400, 210, 140, 20));
+
+        foundCenterLabel.setText("No center found");
+        foundCenterLabel.setName("foundCenterLabel"); // NOI18N
+        getContentPane().add(foundCenterLabel, new AbsoluteConstraints(400, 130, 140, 20));
+
+        foundSportLabel.setText("No sport found");
+        foundSportLabel.setName("foundSportLabel"); // NOI18N
+        getContentPane().add(foundSportLabel, new AbsoluteConstraints(400, 170, 140, 20));
+
         pack();
     }                        
+
+    private void jButton1ActionPerformed(ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        if(SportCenter.findInDisk((int)regSportCenterCode.getValue())==null){
+            JOptionPane.showMessageDialog(RegisterStudent.this, "Sport Center record doesn't exit");
+            return;
+        }
+        if(Sport.findInDisk((int)regSportCode.getValue())==null){
+            JOptionPane.showMessageDialog(RegisterStudent.this, "Sport record doesn't exit");
+            return ;
+        }
+        if(Coach.findInDisk((int)regCoachCode.getValue())==null){
+            JOptionPane.showMessageDialog(RegisterStudent.this, "Coach record doesn't exit");
+            return;
+        }
+        Student newStd = new Student(
+                regStudentName.getText(),//name
+                (int)regSportCenterCode.getValue(),//center code
+                (int)regCoachCode.getValue(),//coach code
+                (int)regSportCode.getValue(),//sport code
+                (int)regAge.getValue(),//age
+                regStudentAddress.getText()//address
+        );
+        newStd.setPassword(regPassword.getText());
+        if(newStd.saveToDisk()){
+            JOptionPane.showMessageDialog(RegisterStudent.this, "Successfully Registered...\nYour ID(which will be used during login)s is: "+newStd.getId());
+        }
+        else{
+            JOptionPane.showMessageDialog(RegisterStudent.this, "Couldn't save record...Please hit register button again...");
+        }
+    }                                        
+
+    private void jButton2ActionPerformed(ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        RegisterStudent.this.dispose();
+        (new LoginFrame()).setVisible(true);
+    }                                        
+
+    private void regStudentAddressActionPerformed(ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+    }                                                 
+
+    private void regSportCenterCodeStateChanged(javax.swing.event.ChangeEvent evt) {                                                
+        // TODO add your handling code here:
+        SportCenter sp = SportCenter.findInDisk((int)regSportCenterCode.getValue());
+        if(sp!=null){
+            foundCenterLabel.setText(sp.getName());
+        }
+        else{
+            foundCenterLabel.setText("No sport center found");
+        }
+    }                                               
+
+    private void regSportCodeStateChanged(ChangeEvent evt) {                                          
+        // TODO add your handling code here:
+        Sport s = Sport.findInDisk((int)regSportCode.getValue());
+        if(s!=null){
+            foundSportLabel.setText(s.getName());
+        }
+        else{
+            foundSportLabel.setText("No sport found");
+        }
+    }                                         
+
+    private void regCoachCodeStateChanged(ChangeEvent evt) {                                          
+        // TODO add your handling code here:
+        Coach c = Coach.findInDisk((int)regCoachCode.getValue());
+        if(c!=null){
+            foundCoachLabel.setText(c.getName());
+        }
+        else{
+            foundCoachLabel.setText(("No coach found"));
+        }
+    }                                         
 
     /**
      * @param args the command line arguments
@@ -96,8 +297,25 @@ public class RegisterStudent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
+    private JLabel foundCenterLabel;
+    private JLabel foundCoachLabel;
+    private JLabel foundSportLabel;
+    private JButton jButton1;
+    private JButton jButton2;
     private JLabel jLabel1;
     private JLabel nameLabel;
     private JLabel nameLabel1;
+    private JLabel nameLabel2;
+    private JLabel nameLabel3;
+    private JLabel nameLabel4;
+    private JLabel nameLabel5;
+    private JLabel nameLabel6;
+    private JSpinner regAge;
+    private JSpinner regCoachCode;
+    private JPasswordField regPassword;
+    private JSpinner regSportCenterCode;
+    private JSpinner regSportCode;
+    private JTextField regStudentAddress;
+    private JTextField regStudentName;
     // End of variables declaration                   
 }
