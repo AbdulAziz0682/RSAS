@@ -7,6 +7,7 @@ package sportAcademy;
 
 import com.google.gson.Gson;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -16,6 +17,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -222,10 +224,25 @@ public class Coach {
         this.sportCode = sportCode;
     }
     public int getRatings() {
-        return ratings;
-    }
-    public void setRatings(int ratings) {
-        this.ratings = ratings;
+        int rating = 0;
+        int total = 0;
+        Scanner reader;
+        try {
+            reader = new Scanner(new File("src/records/ratings.txt"));
+            while(reader.hasNext()){
+              String[] data = reader.nextLine().split("#");
+              if(data[0].equalsIgnoreCase(this.id+"")){   
+                //System.out.println("Feedback: "+data[0]+","+data[1]);             
+                total++;
+                rating += Integer.parseInt(data[1]);
+              }
+            }
+                System.out.println("Feedback after parse: "+rating);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Coach.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(total==0) return 0;
+        return rating/total;
     }
     
 }

@@ -26,7 +26,6 @@ public class Student {
     private int id = (int) (Math.random()*Math.random()*10000);
     private String name;
     private int sportCenterCode;
-    private int coachCode;
     private int sportCode;
     private int age;
     private String address;
@@ -42,10 +41,9 @@ public class Student {
     
     public Student(){}
 
-    public Student(String name, int sportCenterCode, int coachCode, int sportCode, int age, String address) {
+    public Student(String name, int sportCenterCode, int sportCode, int age, String address) {
         this.name = name;
         this.sportCenterCode = sportCenterCode;
-        this.coachCode = coachCode;
         this.sportCode = sportCode;
         this.age = age;
         this.address = address;
@@ -56,7 +54,6 @@ public class Student {
         pretty += "Name: \t"+this.name+"\n";
         pretty += "CenterID: \t"+this.sportCenterCode+"\n";
         pretty += "SportID: \t"+this.sportCode+"\n";
-        pretty += "CoachID: \t"+this.coachCode+"\n";
         pretty += "Age: \t"+this.age+"\n";
         pretty += "Address: \t"+this.address+"\n";
         return pretty;
@@ -162,14 +159,6 @@ public class Student {
 
     public void setSportCenterCode(int sportCenterCode) {
         this.sportCenterCode = sportCenterCode;
-    }
-
-    public int getCoachCode() {
-        return coachCode;
-    }
-
-    public void setCoachCode(int coachCode) {
-        this.coachCode = coachCode;
     }
 
     public int getSportCode() {

@@ -238,7 +238,7 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         DefaultTableModel stdTableModel = new DefaultTableModel(new Object[][] {},
-            new String[]{"StudentID", "Name", "Sport Center Code", "CoachID",  "Sport Code","Age", "Address"});
+            new String[]{"StudentID", "Name", "Sport Center Code", "Sport Code","Age", "Address"});
         populateStudentTable(stdTableModel);
         jTable4.setModel(stdTableModel);
         jScrollPane6.setViewportView(jTable4);
@@ -905,14 +905,13 @@ public class AdminFrame extends javax.swing.JFrame {
             }
         }
         for(int i=0; i<stdList.size(); i++){
-            Object[] row = new Object[10];
+            Object[] row = new Object[6];
             row[0] = stdList.get(i).getId();
             row[1] = stdList.get(i).getName();
             row[2] = stdList.get(i).getSportCenterCode();
-            row[3] = stdList.get(i).getCoachCode();
-            row[4] = stdList.get(i).getSportCode();
-            row[5] = stdList.get(i).getAge();
-            row[6] = stdList.get(i).getAddress();
+            row[3] = stdList.get(i).getSportCode();
+            row[4] = stdList.get(i).getAge();
+            row[5] = stdList.get(i).getAddress();
             stdTableModel.addRow(row);
         }
     }
@@ -951,7 +950,7 @@ public class AdminFrame extends javax.swing.JFrame {
             row[7] = coachList.get(i).getSportCenterCode();
             row[8] = coachList.get(i).getSportCode();
             row[9] = coachList.get(i).getRatings();
-            coachTableModel.addRow(row);
+                coachTableModel.addRow(row);
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

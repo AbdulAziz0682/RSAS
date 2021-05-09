@@ -328,7 +328,7 @@
                         </Property>
                       </Properties>
                       <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableModel stdTableModel = new DefaultTableModel(new Object[][] {}, &#xa;new String[]{&quot;StudentID&quot;, &quot;Name&quot;, &quot;Sport Center Code&quot;, &quot;CoachID&quot;,  &quot;Sport Code&quot;,&quot;Age&quot;, &quot;Address&quot;});&#xa;populateStudentTable(stdTableModel);"/>
+                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableModel stdTableModel = new DefaultTableModel(new Object[][] {}, &#xa;new String[]{&quot;StudentID&quot;, &quot;Name&quot;, &quot;Sport Center Code&quot;, &quot;Sport Code&quot;,&quot;Age&quot;, &quot;Address&quot;});&#xa;populateStudentTable(stdTableModel);"/>
                       </AuxValues>
                     </Component>
                   </SubComponents>
