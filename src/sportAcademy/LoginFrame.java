@@ -225,6 +225,7 @@ public class LoginFrame extends javax.swing.JFrame {
             else{
                 JOptionPane.showMessageDialog(LoginFrame.this, "Login Successfull");
                (new StudentFrame(found)).setVisible(true);
+               LoginFrame.this.dispose();
             }
         }
     }//GEN-LAST:event_userLoginActionPerformed

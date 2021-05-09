@@ -129,5 +129,12 @@ public class SportCenter {
     public void setLocation(String location) {
         this.location = location;
     }
-    
+    public static void main(String[] args){
+        SportCenter sp1= new SportCenter(1, "SPC1", "North-Kuala Lumpur");
+        SportCenter sp2 = new SportCenter(2, "SPC2", "South-West Kuala Lumpur");
+        SportCenter sp3 = new SportCenter(3, "SPC3", "Central Kuala Lumpur");
+        System.out.println(sp1.saveToDisk());
+        System.out.println(sp2.saveToDisk());
+        System.out.println(sp3.saveToDisk());
+    }
 }

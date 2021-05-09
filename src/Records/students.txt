@@ -1,1 +1,1 @@
-[{"id":2904,"sportCenterCode":0,"coachCode":0,"sportCode":0,"age":0},{"id":5918,"name":"std1","sportCenterCode":2,"coachCode":3,"sportCode":5,"age":19,"address":"std 1 address","password":"std1"}]
+[{"id":2904,"sportCenterCode":0,"sportCode":0,"age":0},{"id":5918,"name":"std1","sportCenterCode":2,"sportCode":2,"age":19,"address":"std 1 address","password":"std1"}]
